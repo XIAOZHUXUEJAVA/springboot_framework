@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace=".mapper.UserMapper">
+
+    <resultMap type="com.zhu.domain.entity.User" id="UserMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+        <result property="nickName" column="nick_name" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="type" column="type" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="phonenumber" column="phonenumber" jdbcType="VARCHAR"/>
+        <result property="sex" column="sex" jdbcType="VARCHAR"/>
+        <result property="avatar" column="avatar" jdbcType="VARCHAR"/>
+        <result property="createBy" column="create_by" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateBy" column="update_by" jdbcType="INTEGER"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="delFlag" column="del_flag" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--&lt;!&ndash;查询单个&ndash;&gt;-->
+    <!--<select id="findById" resultMap="UserMap">-->
+        <!--select-->
+          <!--id, user_name, nick_name, password, type, status, email, phonenumber, sex, avatar, create_by, create_time, update_by, update_time, del_flag-->
+        <!--from sys_user-->
+        <!--where id = #{id}-->
+    <!--</select>-->
+
+    <!--&lt;!&ndash;查询指定行数据&ndash;&gt;-->
+    <!--<select id="findAllByLimit" resultMap="UserMap">-->
+        <!--select-->
+          <!--id, user_name, nick_name, password, type, status, email, phonenumber, sex, avatar, create_by, create_time, update_by, update_time, del_flag-->
+        <!--from sys_user-->
+        <!--<where>-->
+            <!--<if test="id != null">-->
+                <!--and id = #{id}-->
+            <!--</if>-->
+            <!--<if test="userName != null and userName != ''">-->
+                <!--and user_name = #{userName}-->
+            <!--</if>-->
+            <!--<if test="nickName != null and nickName != ''">-->
+                <!--and nick_name = #{nickName}-->
+            <!--</if>-->
+            <!--<if test="password != null and password != ''">-->
+                <!--and password = #{password}-->
+            <!--</if>-->
+            <!--<if test="type != null and type != ''">-->
+                <!--and type = #{type}-->
+            <!--</if>-->
+            <!--<if test="status != null and status != ''">-->
+                <!--and status = #{status}-->
+            <!--</if>-->
+            <!--<if test="email != null and email != ''">-->
+                <!--and email = #{email}-->
+            <!--</if>-->
+            <!--<if test="phonenumber != null and phonenumber != ''">-->
+                <!--and phonenumber = #{phonenumber}-->
+            <!--</if>-->
+            <!--<if test="sex != null and sex != ''">-->
+                <!--and sex = #{sex}-->
+            <!--</if>-->
+            <!--<if test="avatar != null and avatar != ''">-->
+                <!--and avatar = #{avatar}-->
+            <!--</if>-->
+            <!--<if test="createBy != null">-->
+                <!--and create_by = #{createBy}-->
+            <!--</if>-->
+            <!--<if test="createTime != null">-->
+                <!--and create_time = #{createTime}-->
+            <!--</if>-->
+            <!--<if test="updateBy != null">-->
+                <!--and update_by = #{updateBy}-->
+            <!--</if>-->
+            <!--<if test="updateTime != null">-->
+                <!--and update_time = #{updateTime}-->
+            <!--</if>-->
+            <!--<if test="delFlag != null">-->
+                <!--and del_flag = #{delFlag}-->
+            <!--</if>-->
+        <!--</where>-->
+        <!--limit #{pageable.offset}, #{pageable.pageSize}-->
+    <!--</select>-->
+
+    <!--&lt;!&ndash;统计总行数&ndash;&gt;-->
+    <!--<select id="count" resultType="java.lang.Long">-->
+        <!--select count(1)-->
+        <!--from sys_user-->
+        <!--<where>-->
+            <!--<if test="id != null">-->
+                <!--and id = #{id}-->
+            <!--</if>-->
+            <!--<if test="userName != null and userName != ''">-->
+                <!--and user_name = #{userName}-->
+            <!--</if>-->
+            <!--<if test="nickName != null and nickName != ''">-->
+                <!--and nick_name = #{nickName}-->
+            <!--</if>-->
+            <!--<if test="password != null and password != ''">-->
+                <!--and password = #{password}-->
+            <!--</if>-->
+            <!--<if test="type != null and type != ''">-->
+                <!--and type = #{type}-->
+            <!--</if>-->
+            <!--<if test="status != null and status != ''">-->
+                <!--and status = #{status}-->
+            <!--</if>-->
+            <!--<if test="email != null and email != ''">-->
+                <!--and email = #{email}-->
+            <!--</if>-->
+            <!--<if test="phonenumber != null and phonenumber != ''">-->
+                <!--and phonenumber = #{phonenumber}-->
+            <!--</if>-->
+            <!--<if test="sex != null and sex != ''">-->
+                <!--and sex = #{sex}-->
+            <!--</if>-->
+            <!--<if test="avatar != null and avatar != ''">-->
+                <!--and avatar = #{avatar}-->
+            <!--</if>-->
+            <!--<if test="createBy != null">-->
+                <!--and create_by = #{createBy}-->
+            <!--</if>-->
+            <!--<if test="createTime != null">-->
+                <!--and create_time = #{createTime}-->
+            <!--</if>-->
+            <!--<if test="updateBy != null">-->
+                <!--and update_by = #{updateBy}-->
+            <!--</if>-->
+            <!--<if test="updateTime != null">-->
+                <!--and update_time = #{updateTime}-->
+            <!--</if>-->
+            <!--<if test="delFlag != null">-->
+                <!--and del_flag = #{delFlag}-->
+            <!--</if>-->
+        <!--</where>-->
+    <!--</select>-->
+
+    <!--&lt;!&ndash;新增所有列&ndash;&gt;-->
+    <!--<insert id="insert" keyProperty="id" useGeneratedKeys="true">-->
+        <!--insert into sys_user(user_name, nick_name, password, type, status, email, phonenumber, sex, avatar, create_by, create_time, update_by, update_time, del_flag)-->
+        <!--values (#{userName}, #{nickName}, #{password}, #{type}, #{status}, #{email}, #{phonenumber}, #{sex}, #{avatar}, #{createBy}, #{createTime}, #{updateBy}, #{updateTime}, #{delFlag})-->
+    <!--</insert>-->
+
+    <!--<insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">-->
+        <!--insert into sys_user(user_name, nick_name, password, type, status, email, phonenumber, sex, avatar, create_by, create_time, update_by, update_time, del_flag)-->
+        <!--values-->
+        <!--<foreach collection="entities" item="entity" separator=",">-->
+        <!--(#{entity.userName}, #{entity.nickName}, #{entity.password}, #{entity.type}, #{entity.status}, #{entity.email}, #{entity.phonenumber}, #{entity.sex}, #{entity.avatar}, #{entity.createBy}, #{entity.createTime}, #{entity.updateBy}, #{entity.updateTime}, #{entity.delFlag})-->
+        <!--</foreach>-->
+    <!--</insert>-->
+
+    <!--<insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">-->
+        <!--insert into sys_user(user_name, nick_name, password, type, status, email, phonenumber, sex, avatar, create_by, create_time, update_by, update_time, del_flag)-->
+        <!--values-->
+        <!--<foreach collection="entities" item="entity" separator=",">-->
+            <!--(#{entity.userName}, #{entity.nickName}, #{entity.password}, #{entity.type}, #{entity.status}, #{entity.email}, #{entity.phonenumber}, #{entity.sex}, #{entity.avatar}, #{entity.createBy}, #{entity.createTime}, #{entity.updateBy}, #{entity.updateTime}, #{entity.delFlag})-->
+        <!--</foreach>-->
+        <!--on duplicate key update-->
+        <!--user_name = values(user_name),-->
+        <!--nick_name = values(nick_name),-->
+        <!--password = values(password),-->
+        <!--type = values(type),-->
+        <!--status = values(status),-->
+        <!--email = values(email),-->
+        <!--phonenumber = values(phonenumber),-->
+        <!--sex = values(sex),-->
+        <!--avatar = values(avatar),-->
+        <!--create_by = values(create_by),-->
+        <!--create_time = values(create_time),-->
+        <!--update_by = values(update_by),-->
+        <!--update_time = values(update_time),-->
+        <!--del_flag = values(del_flag)-->
+    <!--</insert>-->
+
+    <!--&lt;!&ndash;通过主键修改数据&ndash;&gt;-->
+    <!--<update id="update">-->
+        <!--update sys_user-->
+        <!--<set>-->
+            <!--<if test="userName != null and userName != ''">-->
+                <!--user_name = #{userName},-->
+            <!--</if>-->
+            <!--<if test="nickName != null and nickName != ''">-->
+                <!--nick_name = #{nickName},-->
+            <!--</if>-->
+            <!--<if test="password != null and password != ''">-->
+                <!--password = #{password},-->
+            <!--</if>-->
+            <!--<if test="type != null and type != ''">-->
+                <!--type = #{type},-->
+            <!--</if>-->
+            <!--<if test="status != null and status != ''">-->
+                <!--status = #{status},-->
+            <!--</if>-->
+            <!--<if test="email != null and email != ''">-->
+                <!--email = #{email},-->
+            <!--</if>-->
+            <!--<if test="phonenumber != null and phonenumber != ''">-->
+                <!--phonenumber = #{phonenumber},-->
+            <!--</if>-->
+            <!--<if test="sex != null and sex != ''">-->
+                <!--sex = #{sex},-->
+            <!--</if>-->
+            <!--<if test="avatar != null and avatar != ''">-->
+                <!--avatar = #{avatar},-->
+            <!--</if>-->
+            <!--<if test="createBy != null">-->
+                <!--create_by = #{createBy},-->
+            <!--</if>-->
+            <!--<if test="createTime != null">-->
+                <!--create_time = #{createTime},-->
+            <!--</if>-->
+            <!--<if test="updateBy != null">-->
+                <!--update_by = #{updateBy},-->
+            <!--</if>-->
+            <!--<if test="updateTime != null">-->
+                <!--update_time = #{updateTime},-->
+            <!--</if>-->
+            <!--<if test="delFlag != null">-->
+                <!--del_flag = #{delFlag},-->
+            <!--</if>-->
+        <!--</set>-->
+        <!--where id = #{id}-->
+    <!--</update>-->
+
+    <!--&lt;!&ndash;通过主键删除&ndash;&gt;-->
+    <!--<delete id="deleteById">-->
+        <!--delete from sys_user where id = #{id}-->
+    <!--</delete>-->
+
+</mapper>
+
