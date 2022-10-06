@@ -1,5 +1,6 @@
 package com.zhu.controller;
 
+import com.zhu.annoation.SystemLog;
 import com.zhu.mapper.UserMapper;
 import com.zhu.service.UserService;
 import com.zhu.utils.ResponseResult;
@@ -27,10 +28,9 @@ public class UserController {
 
 
     @GetMapping("/all")
+    @SystemLog(businessName = "获取所有用户")
     public ResponseResult getAllUsers() {
         return userService.getAllUsers();
     }
-
-
 
 }
