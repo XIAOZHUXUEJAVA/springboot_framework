@@ -1,14 +1,15 @@
 package com.zhu.controller;
 
 import com.zhu.annoation.SystemLog;
+import com.zhu.domain.entity.User;
 import com.zhu.mapper.UserMapper;
 import com.zhu.service.UserService;
 import com.zhu.utils.ResponseResult;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * @author xiaozhu
@@ -32,5 +33,14 @@ public class UserController {
     public ResponseResult getAllUsers() {
         return userService.getAllUsers();
     }
+
+    @PostMapping("/add")
+    public  ResponseResult saveUser(@RequestBody @Valid User user) {
+        userService.save(user);
+
+        return ResponseResult.okResult();
+
+    }
+
 
 }

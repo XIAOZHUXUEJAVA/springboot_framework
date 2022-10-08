@@ -1,4 +1,4 @@
-package com.zhu.exception;
+package com.zhu.handler.exception;
 
 import com.zhu.enums.AppHttpCodeEnum;
 

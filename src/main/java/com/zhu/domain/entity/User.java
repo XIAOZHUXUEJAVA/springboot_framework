@@ -11,6 +11,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+
+import javax.validation.constraints.NotBlank;
+
 /**
  * 用户表(User)表实体类
  *
@@ -28,8 +31,10 @@ public class User  {
     private Long id;
 
     //用户名
+    @NotBlank(message = "用户名不能为空")
     private String userName;
     //昵称
+    @NotBlank(message = "昵称不能为空")
     private String nickName;
     //密码
     private String password;

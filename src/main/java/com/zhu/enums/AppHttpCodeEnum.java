@@ -19,6 +19,7 @@ public enum AppHttpCodeEnum {
     REQUIRE_USERNAME(504, "必需填写用户名"),
     NO_USER_ERROR(519,"用户不存在"),
     CONTENT_NOT_NULL(519,"评论不能为空"),
+    PARAMETER_ERROR(1001, "请求参数有误!"),
     LOGIN_ERROR(505,"用户名或密码错误");
 
 
